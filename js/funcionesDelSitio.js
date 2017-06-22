@@ -16,7 +16,7 @@ jQuery("input[name='rut']").Rut({format_on:'keyup'});
     jQuery("input[name='rut']").blur(function () {
 
     $.ajax({
-    			url: '../Prueba%203/control/datos.php',
+    		/*url: '../Prueba%203/control/datos.php',
             dataType: 'json',
             success: function(data){
             	{
@@ -25,16 +25,17 @@ jQuery("input[name='rut']").Rut({format_on:'keyup'});
                 	 var nombre = data[index].nombre;
                     var apellido = data[index].apellido;
                 $("#nombre").app
-                })
-            }
-    			//type : 'GET', url : '../Prueba%203/control/datos.php',
-    			//data : {'id_persona': r},
-    			//datatype: 'json',
+                }) 
+            }*/
+    			type : 'GET', url : '../Prueba%203/control/datos.php',
+    			data : {'id_persona': r},
+    			datatype: 'json',
     			
-		    } //.done(function(data){
+		    }).done(function(data){
 		    	//data = data.replace("[","").replace("]","").trim(;)
-		    	
-		    			
+		    	var d = (jQuery.parseJSON(data))[0];
+
+		    	console.log("d",d);
 
 		    	//print_r(array);
 		    	//console.log("=>"+data+"<==");
@@ -44,7 +45,8 @@ jQuery("input[name='rut']").Rut({format_on:'keyup'});
 		    	//console.log("data.nombre=>"+obj.nombre);
 		    	//console.log("data=>"+obj+"<==");
     			//$('test').val(obj.nombre);
-    			//jQuery("input[id='test']").val(data.nombre);
+    			$("#nombre").val(d.nombre); 
+    			$("#apellido").val(d.apellido);
     			//$("#test").val(obj.nombre);
 
 

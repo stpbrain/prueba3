@@ -17,14 +17,18 @@ class DBConnection {
     const USER = "root";
     const PASS = "";
 
-    public static function consulta($sql)
-    {
-        $conexion = mysql_connect(self::HOST,self::USER,self::PASS);
+    public static function consulta($sql){
+        $dsn = "mysql:host=" . self::HOST . ";dbname=" . self::DBNAME . ";port=" . self::PORT . ";charset=utf8";
+        $dbConexion = new PDO($dsn, self::USER, self::PASS);
+
+        return $dbConexion->query($sql); 
+
+
+
+        /*$conexion = mysql_connect(self::HOST,self::USER,self::PASS);
         mysql_select_db(self::DBNAME,$conexion);
 
-        return mysql_query($sql,$conexion);
-
-
+        return mysql_query($sql,$conexion);*/
     }
 
     public static function getConexion() {
@@ -50,6 +54,7 @@ class DBConnection {
             }
         }
     }
+
     public static function porfavorCrearBD(){
         return self::crearBaseDatos();
     }
