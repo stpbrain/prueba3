@@ -1,42 +1,54 @@
 $(document).ready(function(){
 
+var r;
 	$("#rut").on("keyup",function(){
 		var rut = $(this).val();
+		r = rut.replace('.','').replace('.','').replace('-','');
 		console.log("esto es keyup ", rut);
 	});
 
-jQuery.ajaxSetup({
-        "error":function(respuesta, jqXHR, errorMsg) {            
-           
-            alert("ha ocurrido el siguiente error: "+errorMsg);
-        }
-    });
+
+
+
+//"url": "../Prueba%203/control/datos.php" 
 
 jQuery("input[name='rut']").Rut({format_on:'keyup'});
     jQuery("input[name='rut']").blur(function () {
 
-    	$.ajax({
-				"url": "../Prueba%203/control/datos.php" ,
-				"method" : "GET",	}) .done(function(persona) 
-				{ 
-					console.log("entrando al ajax");
+    $.ajax({
+    			url: '../Prueba%203/control/datos.php',
+            dataType: 'json',
+            success: function(data){
+            	{
+                $("#nombre").html("");
+                $.each(data,function(index){
+                	 var nombre = data[index].nombre;
+                    var apellido = data[index].apellido;
+                $("#nombre").app
+                })
+            }
+    			//type : 'GET', url : '../Prueba%203/control/datos.php',
+    			//data : {'id_persona': r},
+    			//datatype: 'json',
+    			
+		    } //.done(function(data){
+		    	//data = data.replace("[","").replace("]","").trim(;)
+		    	
+		    			
 
-			for (var x =0 ; x < persona.length; x++)
-				{
-					
-					$("input[name='nombre']").append(persona[x].nombre);
-					$("select").append("<option>"+response[x].nombre+"</option>");
-                    jQuery("input[name='nombre']").append("nombre", true);
+		    	//print_r(array);
+		    	//console.log("=>"+data+"<==");
+		    	//var obj = jQuery.parseJSON( data );
+
+		    	//console.info('d',data['id_persona']);
+		    	//console.log("data.nombre=>"+obj.nombre);
+		    	//console.log("data=>"+obj+"<==");
+    			//$('test').val(obj.nombre);
+    			//jQuery("input[id='test']").val(data.nombre);
+    			//$("#test").val(obj.nombre);
 
 
-
-                        jQuery("input[name='apellido']").append(persona[x].apellido);
-                        jQuery("input[name='apellido']").append("apellido", true);
-					
-				}
-				}); 
-                        
-                        
+		    })
         
    //
     });
@@ -44,6 +56,9 @@ jQuery("input[name='rut']").Rut({format_on:'keyup'});
 
 
 });
+
+
+busquedaPrincipal();
 
 function busquedaPrincipal()
 {
