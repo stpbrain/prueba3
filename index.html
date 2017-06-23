@@ -24,7 +24,7 @@
     <strong>Success!</strong> Indicates a successful or positive action.
   </div>
 
-<form class="form-horizontal"  >
+<form class="form-horizontal" action="control/bono.php" method="POST" >
 <fieldset>
 
 <!-- Form Name -->
@@ -36,7 +36,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="rut">Ingrese su rut</label>  
   <div class="col-md-4">
-  <input id="rut" name="rut" type="text" placeholder="11111111-1" class="form-control input-md" maxlength="12">
+  <input id="rut" name="rut" type="text" placeholder="11111111-1" required class="form-control input-md" maxlength="12" onblur="validarRut(this)">
     
 
   </div>
@@ -46,8 +46,8 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="nombre">Ingrese su nombre</label>  
   <div class="col-md-4">
-  <input id="nombre" name="nombre" type="text"  class="form-control input-md" required="">
-  <input type="text" name="test" id="test">
+  <input id="nombre" name="nombre" type="text"  class="form-control input-md" required>
+ 
     
   </div>
 </div>
@@ -56,7 +56,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="apellido">Ingrese su Apellido</label>  
   <div class="col-md-4">
-  <input id="apellido" name="apellido" type="text" placeholder="Toro" class="form-control input-md" required="">
+  <input id="apellido" name="apellido" type="text" placeholder="Toro" class="form-control input-md" required>
     
   </div>
 </div>
@@ -80,18 +80,19 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="region"></label>
   <div class="col-md-4">
-    <select id="region" name="region" class="form-control">
-      <option value="1">- Región -</option>
+    <select id="region" name="region" class="form-control" onchange="cargarProvincias()">
+      <option value="">- Región -</option>
     </select>
   </div>
 </div>
+
 
 <!-- Select Basic -->
 <div class="form-group">
   <label class="col-md-4 control-label" for="provincia"></label>
   <div class="col-md-4">
-    <select id="provincia" name="provincia" class="form-control">
-      <option value="1">- Provincia -</option>
+    <select id="provincia" name="provincia" class="form-control" onchange="cargarComunas()">
+      <option value="">- Provincia -</option>
     </select>
   </div>
 </div>
@@ -101,7 +102,7 @@
   <label class="col-md-4 control-label" for="comuna"></label>
   <div class="col-md-4">
     <select id="comuna" name="comuna" class="form-control">
-      <option value="1">- Comuna -</option>
+      <option value="">- Comuna -</option>
     </select>
   </div>
 </div>
@@ -110,7 +111,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label " for="comuna"> Ingrese Fecha de Atencion</label>
   <div class="col-md-4">
-    <input type="date" id="fecha" name="fecha" class="form-control glyphicon glyphicon-calendar " style="font-size:20px">
+    <input type="date" id="fecha" name="fecha" class="form-control glyphicon glyphicon-calendar " style="font-size:20px" required>
   </div>
 </div>
 
@@ -119,7 +120,7 @@
 <div class="form-group">
   <label  control-label" for="limpiar"></label>
   <div >
-    <button id="limpiar" name="limpiar" class="btn btn-danger">Limpiar</button>
+    <button id="limpiar" name="limpiar" type="reset" class="btn btn-danger">Limpiar</button>
     <button id="envia" name="envia" class="btn btn-success">Enviar</button>
   </div>
 </div>
