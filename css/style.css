@@ -1,0 +1,75 @@
+html,body{
+	margin:0;
+	padding:0;
+
+}
+
+#header{
+	position:relative;
+	width:100%;
+	height:20%;
+	top:-20px;
+}
+#divisor{
+	position:relative;
+	margin-top: 25px;
+	border:0;
+	height:8px;
+	background-image: linear-gradient(to right, rgba(8, 156, 194, 222), rgba(0, 0, 0, 0));
+	background-color:white;
+	z-index:1;
+}
+
+
+img{
+	position:absolute;
+	width:280px;
+	top:0px;
+	right:14cm;
+	z-index:0;
+}
+
+#logo2{
+	position:absolute;
+	width:600px;
+	top:370px;
+	right:5cm;
+	border-radius: 15px;
+	box-shadow: 0 0 10px 1px black;
+}
+
+h1{
+	position:relative;
+	right:5cm;
+	color:skyblue;
+	top:65px;
+	font-size:1.5cm;
+	
+}
+
+
+legend{
+	background: linear-gradient(to right, skyblue, white);
+	border-radius: 15px;
+}
+
+fieldset{
+	background-color:white;
+	border: 2px solid;
+	width:700px;
+	position:relative;
+	left:5cm;
+	border-radius: 15px;
+	box-shadow: 0 0 10px 1px black;
+}
+
+footer{
+	border-top: 3px solid black;
+	height:100px;
+	background-color:skyblue;
+	width:100%;
+	margin-bottom: ;
+	position: absolute;
+	bottom:;
+
+}

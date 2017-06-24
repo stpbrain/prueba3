@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/landing-page.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="css/style.css"/>
 
     <!--<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">-->
 
@@ -15,22 +14,11 @@
     <script src="js/jquery.js"></script>
     <script src="js/funcionesDelSitio.js"></script>
     <script src="js/jquery.Rut.js"></script>
-
-
    <!-- <script src="js/formulario.js" ></script> -->
 
 
 </head>
 <body >
-
-<div id="header">
-<h1 id="h1">Isapre Somos Salud</h1> 
-</div>
-
-<hr id="divisor">
-
-<img id="logo" src="img/family.jpg">
-<img id="logo2" src="img/familiafeliz.jpg">
 
   <div id="alerta" class="alert " style="display: none">
     <strong>Success!</strong> Indicates a successful or positive action.
@@ -48,7 +36,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="rut">Ingrese su rut</label>  
   <div class="col-md-4">
-  <input id="rut" name="rut" type="text" placeholder="11.111.111-1" required class="form-control input-md" maxlength="12" onblur="validarRut(this)">
+  <input id="rut" name="rut" type="text" placeholder="11111111-1" required class="form-control input-md" maxlength="12" onblur="validarRut(this)">
     
 
   </div>
@@ -58,7 +46,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="nombre">Ingrese su nombre</label>  
   <div class="col-md-4">
-  <input id="nombre" name="nombre" type="text" placeholder="Jose" class="form-control input-md" required>
+  <input id="nombre" name="nombre" type="text"  class="form-control input-md" required>
  
     
   </div>
@@ -84,7 +72,7 @@
 </div>
 
 </fieldset>
-<br>
+
 <fieldset>
 
 <legend>Zona de Atencion </legend>
@@ -137,10 +125,12 @@
   </div>
 </div>
 
+
+
+
 </fieldset>
 </form>
-<br>
-<footer >Aplicacion diseñada para DAI // Profesor: Osvaldo Andrade</footer>
+<div class="footer"> Aplicacoin diseñada para DAI // Profesor: Osvaldo algo</div>
 
 </body>
 </html>
