@@ -18,7 +18,6 @@ jQuery("input[name='rut']").blur(function () {
 
 
 
-
 	$.ajax({
 
 		type : 'GET', url : '../prueba3/control/datos.php',
@@ -34,15 +33,33 @@ jQuery("input[name='rut']").blur(function () {
 		//console.log("d",d);
 		$("#nombre").val(d.nombre); 
 		$("#apellido").val(d.apellido);
+	  	var f =d.fnac.substring(0,4);
+	  	var fn = 2017 -f;
+	  	if (fn > 18)
+	  	{
+
+	  		$("#fnac").val("Mayor de edad. "+fn+"Años")
+	  	}else
+	  	{
+	  		$("#fnac").val("Menor de edad. "+fn+"Años")
+	  		
+	  	}
+
+	  	//$("#fnac").val(d.fnac);
+		console.log(fn);   //	
+
+	
+		
 	}
 	catch(e)
 	{
 		alert( 'El usuario no está registrado' );
 		return false;
 	}
+
 	});
 
-   //
+
 
    $.ajax({
 

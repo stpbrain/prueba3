@@ -32,11 +32,11 @@ jQuery(document).ready(function () {
             jQuery.getJSON("/demo-ajax/backend/info-cliente.php",
                     {id:mantisa},
                     function (titular) {
-                        jQuery("input[name='nombre']").val(titular.nombre);
-                        jQuery("input[name='nombre']").attr("readonly", true);
+                       // jQuery("input[name='nombre']").val(titular.nombre);
+                        //jQuery("input[name='nombre']").attr("readonly", true);
 
-                        jQuery("input[name='apellido']").val(titular.apellido);
-                        jQuery("input[name='apellido']").attr("readonly", true);
+                       // jQuery("input[name='apellido']").val(titular.apellido);
+                       // jQuery("input[name='apellido']").attr("readonly", true);
 
                        // jQuery("select[name='beneficiario'] option").remove();
                        // jQuery("select[name='beneficiario']").append("<option value=\"\">-- Seleccione el beneficiario --</option>");
